@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Check if BUCKET_NAME environment variable is set
+if [ -z "$BUCKET_NAME" ]; then
+  echo "Error: BUCKET_NAME environment variable is not set."
+  exit 1
+fi
+
+# Create the S3 bucket with the specified location constraint
+aws s3api create-bucket --bucket "$BUCKET_NAME" --create-bucket-configuration LocationConstraint=ca-central-1
+
+# Check if the bucket was created successfully
+if [ $? -eq 0 ]; then
+  echo "Bucket $BUCKET_NAME created successfully in ca-central-1."
+else
+  echo "Error: Failed to create bucket $BUCKET_NAME."
+  exit 1
+fi
