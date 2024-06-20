@@ -7,4 +7,4 @@ aws cloudformation deploy \
 --template-file template.yaml \
 --no-execute-changeset \
 --region ca-central-1 \
---stack-name $STACK_NAME
+--stack-name $STACK_NAME 

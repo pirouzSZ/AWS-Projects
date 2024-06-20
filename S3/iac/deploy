@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-echo "==Deploy S3 bucket via CFN"
